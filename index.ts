@@ -10,11 +10,11 @@ new k8s.helm.v2.Chart(
     path: 'istio-1.1.4/install/kubernetes/helm/istio',
     values: {
       gateways: { enabled: false },
-      galley: { enabled: false },
+      galley: { enabled: true },
       mixer: { policy: { enabled: false }, telemetry: { enabled: false } },
       pilot: { autoscaleEnabled: true, autoscaleMax: 5, autoscaleMin: 2 },
       prometheus: { enabled: false },
-      sidecarInjectorWebhook: { enabled: false }
+      sidecarInjectorWebhook: { enabled: true }
     }
   },
   { dependsOn: [istioInit] }
